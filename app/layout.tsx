@@ -1,35 +1,75 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import React from "react";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const workSans = localFont({
+    src: [
+        {
+            path: "./fonts/WorkSans-Black.ttf",
+            weight: "900",
+            style: "normal",
+        },
+        {
+            path: "./fonts/WorkSans-ExtraBold.ttf",
+            weight: "800",
+            style: "normal",
+        },
+        {
+            path: "./fonts/WorkSans-Bold.ttf",
+            weight: "700",
+            style: "normal",
+        },
+        {
+            path: "./fonts/WorkSans-SemiBold.ttf",
+            weight: "600",
+            style: "normal",
+        },
+        {
+            path: "./fonts/WorkSans-Medium.ttf",
+            weight: "500",
+            style: "normal",
+        },
+        {
+            path: "./fonts/WorkSans-Regular.ttf",
+            weight: "400",
+            style: "normal",
+        },
+        {
+            path: "./fonts/WorkSans-Black.ttf",
+            weight: "900",
+            style: "normal",
+        },
+        {
+            path: "./fonts/WorkSans-Thin.ttf",
+            weight: "200",
+            style: "normal",
+        },
+        {
+            path: "./fonts/WorkSans-ExtraLight.ttf",
+            weight: "100",
+            style: "normal",
+        },
+    ],
+    variable: "--font-work-sans",
 });
 
 export const metadata: Metadata = {
-  title: "tech-startup-directory",
-  description: "Tech start up directory that allows users to showcase their new applications",
+    title: "TS Directory",
+    description:
+        "Tech start up directory that allows users to showcase their new applications",
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en">
+            <body className={`${workSans.variable} antialiased`}>
+                {children}
+            </body>
+        </html>
+    );
 }
