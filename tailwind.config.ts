@@ -12,11 +12,17 @@ const config: Config = {
         extend: {
             screens: {
                 xs: "475px",
+                // xs: "375px",
+                // sm: "475px",
+                // md: "768px",
+                // lg: "1200px",
             },
             colors: {
                 primary: {
                     "100": "#FFE8F0",
-                    DEFAULT: "#EE2B69",
+                    DEFAULT: "#592a39",
+                    // DEFAULT: "#6e1832",
+                    // DEFAULT: "#EE2B69",
                 },
                 secondary: "#FBE843",
                 black: {
