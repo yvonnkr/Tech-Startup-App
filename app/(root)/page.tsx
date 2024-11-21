@@ -1,5 +1,7 @@
 import SearchForm from "@/components/SearchForm";
-import StartupCard from "@/components/StartupCard";
+import StartupCard, { StartupTypeCard } from "@/components/StartupCard";
+import { client } from "@/sanity/lib/client";
+import { STARTUPS_QUERY } from "@/sanity/lib/queries";
 
 export default async function Home({
     searchParams,
@@ -7,39 +9,9 @@ export default async function Home({
     searchParams: Promise<{ query?: string }>;
 }) {
     const query = (await searchParams).query;
+    const posts = await client.fetch(STARTUPS_QUERY);
 
-    const posts = [
-        {
-            _id: 1,
-            _createdAt: new Date(),
-            views: 55,
-            author: { _id: 1, name: "John" },
-            description: "This is a description",
-            image: "https://picsum.photos/150/150",
-            category: "Robots",
-            title: "We Robots",
-        },
-        {
-            _id: 2,
-            _createdAt: new Date(),
-            views: 55,
-            author: { _id: 1, name: "John" },
-            description: "This is a description",
-            image: "https://picsum.photos/150/150",
-            category: "Robots",
-            title: "We Robots",
-        },
-        {
-            _id: 3,
-            _createdAt: new Date(),
-            views: 55,
-            author: { _id: 1, name: "John" },
-            description: "This is a description",
-            image: "https://picsum.photos/150/150",
-            category: "Robots",
-            title: "We Robots",
-        },
-    ];
+    // console.log(JSON.stringify(posts, null, 2));
 
     return (
         <>
@@ -63,7 +35,7 @@ export default async function Home({
 
                 <ul className="mt-7 card_grid">
                     {posts?.length > 0 ? (
-                        posts.map((post: StartupTypeCard, index: number) => (
+                        posts.map((post: StartupTypeCard) => (
                             <StartupCard key={post?._id} post={post} />
                         ))
                     ) : (
