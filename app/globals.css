@@ -52,7 +52,7 @@
     }
 
     .tag {
-        @apply bg-secondary px-6 py-3 font-work-sans font-bold rounded-sm uppercase relative tag-tri;
+        @apply bg-secondary/50 px-6 py-3 font-work-sans font-bold rounded-sm uppercase relative tag-tri;
     }
 
     .heading {
@@ -60,7 +60,7 @@
     }
 
     .sub-heading {
-        @apply font-medium text-[20px] text-white max-w-2xl text-center break-words;
+        @apply font-medium text-[20px] text-white/50 max-w-2xl text-center break-words;
     }
 
     .section_container {
