@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import React from "react";
 import "easymde/dist/easymde.min.css";
+import { Toaster } from "@/components/ui/toaster";
 
 const workSans = localFont({
     src: [
@@ -70,6 +71,7 @@ export default function RootLayout({
         <html lang="en">
             <body className={`${workSans.variable} antialiased bg-white/50`}>
                 {children}
+                <Toaster />
             </body>
         </html>
     );
